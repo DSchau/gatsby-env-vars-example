@@ -25,6 +25,7 @@
     "build": "gatsby build",
     "build:development": "cross-env ACTIVE_ENV=development npm run build",
     "build:staging": "cross-env ACTIVE_ENV=staging npm run build",
+    "postbuild:staging": "cat public/index.html | (grep 891011 --count && echo \"The production API key is being used\") || echo \"The staging API key is being used\"",
     "build:production": "cross-env ACTIVE_ENV=production npm run build",
     "develop": "gatsby develop",
     "start": "npm run develop",
